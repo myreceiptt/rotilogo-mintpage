@@ -120,8 +120,8 @@ function App() {
           an NFT project by&nbsp;
             <StyledLink
               target={"_blank"}
-              title={"All Repositories"}
-              href={"https://linktr.ee/pabrikroti.idn"}
+              title={"GitBook of PabriRoti"}
+              href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"}
               rel={"noreferrer"}
             >
               PabrikRoti.IDN&nbsp;
@@ -140,10 +140,10 @@ function App() {
           <StyledLink
             target={"_blank"}
             title={"The Breads Factory"}
-            href={"https://github.com/pabrik-roti/01-the-breads-factory/wiki"}
+            href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"}
             rel={"noreferrer"}
           >
-            PabrikRoti.IDN Wiki
+            PabrikRoti.IDN GitBook
           </ StyledLink>
         </s.TextDescription>
         <s.SpacerMedium />
@@ -291,7 +291,7 @@ function App() {
         <s.Container jc={"center"} ai={"center"} fd={"row"} style={{ width: "70%" }}>
           <StyledLink
             target={"_blank"}
-            href={"https://b2c1.straight-line.org/"}
+            href={"https://iqraa.straight-line.org/the-kings-nfts/02-the-creations.../waivfves-1/44.-anthropophobia"}
             rel={"noreferrer"}
           >
             <StyledImg 
@@ -304,7 +304,7 @@ function App() {
           <s.SpacerSmall />
           <StyledLink
             target={"_blank"}
-            href={"https://hashlips.online/HashLips"}
+            href={"https://hashlips.io/"}
             rel={"noreferrer"}
           >
             <StyledImg 
@@ -321,7 +321,7 @@ function App() {
             <StyledLink 
               title={"Pabrik Roti - The Breads Factory"}
               target={"_blank"} 
-              href={"https://linktr.ee/pabrikroti.idn"} 
+              href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"} 
               rel={"noreferrer"}
             >
               Pabrik Roti Indonesia
