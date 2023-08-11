@@ -120,7 +120,7 @@ function App() {
           an NFT project by&nbsp;
             <StyledLink
               target={"_blank"}
-              title={"GitBook of PabriRoti"}
+              title={"GitBook of PabrikRoti"}
               href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"}
               rel={"noreferrer"}
             >
