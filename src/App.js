@@ -275,11 +275,10 @@ function App() {
           )}
 
           <s.TextDescription style={{ textAlign: "center", fontSize: 12 }}>
-          Please make sure you are connected to the Polygon (Matic) Mainnet)
-          and use your correct wallet address.
-          The gas limit is already set to 474747 for this contract.
-          But, if you want to change gas limit, you can set it higher to successfully mint your NFT.
-          Once you success mint your NFT, you cannot undo this action.
+          WARNING!!!! On your Metamask wallet, please change the ESTIMATED FEE to LOW, MARKET, or AGGRESSIVE options. Do not forget to do that to mint your NFT successfully!!!! 
+          The gas limit is also already set to 474747 for this contract.
+          But, if you want to change the gas limit, you can set it higher.
+          Once you successfully mint your NFT, you cannot undo this action.
           </s.TextDescription>
           </s.Container>
         </ResponsiveWrapper>
