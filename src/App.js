@@ -112,6 +112,7 @@ function App() {
       return;
     }
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blockchain.account]);
 
   return (
@@ -208,7 +209,8 @@ function App() {
               </>
             ) : (
               <>
-                {blockchain.account === "" || blockchain.smartContract === null ? (
+                {blockchain.account === "" ||
+                blockchain.smartContract === null ? (
                   <>
                     <s.TextTitle
                       style={{
@@ -327,7 +329,8 @@ function App() {
                         <s.SpacerXSmall />
                         <s.TextDescription
                           style={{ textAlign: "center", fontSize: 17 }}>
-                          You can still find, and buy Her on OpenSea.IO marketplace.
+                          You can still find, and buy Her on OpenSea.IO
+                          marketplace.
                         </s.TextDescription>
                         <s.SpacerSmall />
                       </>
@@ -335,13 +338,14 @@ function App() {
                   </>
                 )}
 
-                <s.TextDescription style={{ textAlign: "center", fontSize: 12 }}>
-                  WARNING!!!! On your Metamask wallet, please change the ESTIMATED
-                  FEE to LOW, MARKET, or AGGRESSIVE options. Do not forget to do
-                  that to mint your NFT successfully!!!! The gas limit is also
-                  already set to 474747 for this contract. But, if you want to
-                  change the gas limit, you can set it higher. Once you successfully
-                  mint your NFT, you cannot undo this action.
+                <s.TextDescription
+                  style={{ textAlign: "center", fontSize: 12 }}>
+                  WARNING!!!! On your Metamask wallet, please change the
+                  ESTIMATED FEE to LOW, MARKET, or AGGRESSIVE options. Do not
+                  forget to do that to mint your NFT successfully!!!! The gas
+                  limit is also already set to 474747 for this contract. But, if
+                  you want to change the gas limit, you can set it higher. Once
+                  you successfully mint your NFT, you cannot undo this action.
                 </s.TextDescription>
               </>
             )}
