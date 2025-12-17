@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=24"
+  },
   "name": "thebreadsfactory_logo10k_dapp",
   "version": "1.4.7",
   "private": true,
