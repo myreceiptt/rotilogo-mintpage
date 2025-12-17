@@ -9,6 +9,7 @@ import g2 from "./assets/images/anthropophobia.png";
 import g3 from "./assets/images/hashlips.png";
 // import g4 from "./assets/images/...";
 
+const ARTEFACT_MODE = process.env.REACT_APP_ARTEFACT_MODE === "true";
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
@@ -70,6 +71,9 @@ function App() {
   const [claimingNft, setClaimingNft] = useState(false);
 
   const claimNFTs = (_amount) => {
+    if (ARTEFACT_MODE) {
+      return;
+    }
     if (_amount <= 0) {
       return;
     }
@@ -85,13 +89,13 @@ function App() {
       })
       .once("error", (err) => {
         console.log(err);
-        setFeedback("Sorry, it's just premenstrual syndrome. Please try again later.");
+        setFeedback(
+          "Sorry, it's just premenstrual syndrome. Please try again later."
+        );
         setClaimingNft(false);
       })
       .then((receipt) => {
-        setFeedback(
-          "Alright! You now own one of the Logo. You can mint more."
-        );
+        setFeedback("Alright! You now own one of the Logo. You can mint more.");
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
       });
@@ -104,6 +108,9 @@ function App() {
   };
 
   useEffect(() => {
+    if (ARTEFACT_MODE) {
+      return;
+    }
     getData();
   }, [blockchain.account]);
 
@@ -111,40 +118,43 @@ function App() {
     <s.Screen style={{ backgroundColor: "var(--black)" }}>
       <s.Container flex={1} ai={"center"} style={{ padding: 24 }}>
         <s.SpacerLarge />
-        <s.TextTitle style={{ textAlign: "center", fontSize: 37, fontWeight: "bold" }}>
+        <s.TextTitle
+          style={{ textAlign: "center", fontSize: 37, fontWeight: "bold" }}>
           Logo Pabrik Roti (LPR)
         </s.TextTitle>
         <s.SpacerXSmall />
         <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-          Logo Pabrik Roti is the Logo of The Breads Factory,
-          an NFT project by&nbsp;
-            <StyledLink
-              target={"_blank"}
-              title={"GitBook of PabrikRoti"}
-              href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"}
-              rel={"noreferrer"}
-            >
-              PabrikRoti.IDN&nbsp;
-            </ StyledLink>
-          in Polygon (Matic) blockchain
-          which is also termed as The Breads Factory: Logo 10k.
-          There is ten thousand (10000) unique logo in this NFT project
-          that builds generatively from Her 50 different assets.
-          May you be the lucky ones, you get Her rarest assets.
-          If so, it's up to you. You can love it, keep it, or sell it.
-          Just don't forget Her and Hers who have developed you.
+          Logo Pabrik Roti is the Logo of The Breads Factory, an NFT project
+          by&nbsp;
+          <StyledLink
+            target={"_blank"}
+            title={"GitBook of PabrikRoti"}
+            href={
+              "https://docs.endhonesa.com/04-the-12th-stage.../breads-factory"
+            }
+            rel={"noreferrer"}>
+            PabrikRoti.IDN&nbsp;
+          </StyledLink>
+          in Polygon (Matic) blockchain which is also termed as The Breads
+          Factory: Logo 10k. There is ten thousand (10000) unique logo in this
+          NFT project that builds generatively from Her 50 different assets. May
+          you be the lucky ones, you get Her rarest assets. If so, it's up to
+          you. You can love it, keep it, or sell it. Just don't forget Her and
+          Hers who have developed you.
         </s.TextDescription>
         <s.SpacerXSmall />
         <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-          The complete story can be read here:<br />
+          The complete story can be read here:
+          <br />
           <StyledLink
             target={"_blank"}
             title={"The Breads Factory"}
-            href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"}
-            rel={"noreferrer"}
-          >
+            href={
+              "https://docs.endhonesa.com/04-the-12th-stage.../breads-factory"
+            }
+            rel={"noreferrer"}>
             PabrikRoti.IDN GitBook
-          </ StyledLink>
+          </StyledLink>
         </s.TextDescription>
         <s.SpacerMedium />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
@@ -152,150 +162,210 @@ function App() {
             <StyledImg alt={"Logo Pabrik Roti - Preview"} src={g1} />
             <s.SpacerSmall />
             <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-              Smart contract:<br />
+              Smart contract:
+              <br />
               <StyledLink
                 target={"_blank"}
                 title={"Verified Smart Contract"}
-                href={"https://polygonscan.com/token/0x6710E0f18270bE32F9590503E306997B3162B83e"}
-                rel={"noreferrer"}
-              >
+                href={
+                  "https://polygonscan.com/token/0x6710E0f18270bE32F9590503E306997B3162B83e"
+                }
+                rel={"noreferrer"}>
                 {truncate("0x6710E0f18270bE32F9590503E306997B3162B83e", 9)}
-              </ StyledLink>
+              </StyledLink>
             </s.TextDescription>
           </s.Container>
           <s.SpacerMedium />
-          <s.Container flex={1} jc={"center"} ai={"center"} style={{ backgroundColor: "var(--dark-widow)", padding: 24 }}>
-          {blockchain.account === "" || blockchain.smartContract === null ? (
-            <>
-            
-              <s.TextTitle style={{ textAlign: "center", fontSize: 27, fontWeight: "bold" }}>
-                0.3 Matic/1 LPR
-              </s.TextTitle>
-              <s.SpacerXSmall />
-              <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                1 LPR costs 0.3 Matic. Excluding gas fee.
-              </s.TextDescription>
-              <s.SpacerSmall />
-              <StyledButton
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(connect());
-                  getData();
-                }}
-              >
-                CONNECT WALLET
-              </StyledButton>
-              {blockchain.errorMsg !== "" ? (
-                <>        
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center" }}>
-                      {blockchain.errorMsg}
-                  </s.TextDescription>
-                </>        
-              ) : null}
-              <s.SpacerXSmall />
-              <s.TextDescription style={{ textAlign: "center" }}>
-              Don't have wallet?&nbsp;
-                <StyledLink 
-                  target={"_blank"}
-                  title={"Download MetaMask wallet"}
-                  href={"https://metamask.io/download.html"}
-                  rel={"noreferrer"}
-                >
-                  Download here!
-                </ StyledLink>
-              </s.TextDescription>
-              <s.SpacerXSmall />
-              <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                Connect to the Polygon (Matic) Mainnet network.
-              </s.TextDescription>
-              <s.SpacerSmall />
-                </>
-          ) : (
-<>
-              {Number(data.totalSupply) <= 10000 ? (
-                <>
-                  <s.TextTitle style={{ textAlign: "center", fontSize: 27, fontWeight: "bold" }}>
-                    {data.totalSupply}/10000
-                  </s.TextTitle>
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                    1 LPR costs 0.3 Matic. Excluding gas fee.
-                  </s.TextDescription>
-                  <s.SpacerSmall />
-                  <StyledButton
-                    disabled={claimingNft ? 1 : 0}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      claimNFTs(1);
-                      getData();
-                    }}
-                  >
-                    {claimingNft ? "BUSY MINTING" : "MINTING LOGO"}
-                  </StyledButton>
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center" }}>
-                    {feedback}
-                  </s.TextDescription>
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                    Lazy minting is available, while supplies last.
-                  </s.TextDescription>
-              <s.SpacerSmall />
-                </>
-              ) : (
-                <>
-                  <s.TextTitle style={{ textAlign: "center", fontSize: 27, fontWeight: "bold" }}>
-                    SOLD OUT.
-                  </s.TextTitle>
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                    The Logo already sold out.
-                  </s.TextDescription>
-                  <s.SpacerSmall />
-                  <StyledButton
-                    onClick={(e) => {
-                      window.open("https://opensea.io/collection/logo-pabrik-roti");
-                    }}
-                  >
-                    GO TO OPENSEA.IO
-                  </StyledButton>
-                  <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center" }}>
-                  The largest NFT marketplace.
-              </s.TextDescription>
-              <s.SpacerXSmall />
-                  <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
-                    You can still find, and buy Her on OpenSea.IO marketplace.
-                  </s.TextDescription>
-                  <s.SpacerSmall />
-                </>
-              )}
-</>
-          )}
+          <s.Container
+            flex={1}
+            jc={"center"}
+            ai={"center"}
+            style={{ backgroundColor: "var(--dark-widow)", padding: 24 }}>
+            {ARTEFACT_MODE ? (
+              <>
+                <s.TextTitle
+                  style={{
+                    textAlign: "center",
+                    fontSize: 27,
+                    fontWeight: "bold",
+                  }}>
+                  MINT CLOSED.
+                </s.TextTitle>
+                <s.SpacerXSmall />
+                <s.TextDescription
+                  style={{ textAlign: "center", fontSize: 17 }}>
+                  This page is preserved as an artefact.
+                </s.TextDescription>
+                <s.SpacerSmall />
+                <StyledButton
+                  onClick={() =>
+                    window.open(
+                      "https://opensea.io/collection/logo-pabrik-roti"
+                    )
+                  }>
+                  GO TO OPENSEA.IO
+                </StyledButton>
+              </>
+            ) : (
+              <>
+                {blockchain.account === "" || blockchain.smartContract === null ? (
+                  <>
+                    <s.TextTitle
+                      style={{
+                        textAlign: "center",
+                        fontSize: 27,
+                        fontWeight: "bold",
+                      }}>
+                      0.3 Matic/1 LPR
+                    </s.TextTitle>
+                    <s.SpacerXSmall />
+                    <s.TextDescription
+                      style={{ textAlign: "center", fontSize: 17 }}>
+                      1 LPR costs 0.3 Matic. Excluding gas fee.
+                    </s.TextDescription>
+                    <s.SpacerSmall />
+                    <StyledButton
+                      onClick={(e) => {
+                        e.preventDefault();
+                        dispatch(connect());
+                        getData();
+                      }}>
+                      CONNECT WALLET
+                    </StyledButton>
+                    {blockchain.errorMsg !== "" ? (
+                      <>
+                        <s.SpacerXSmall />
+                        <s.TextDescription style={{ textAlign: "center" }}>
+                          {blockchain.errorMsg}
+                        </s.TextDescription>
+                      </>
+                    ) : null}
+                    <s.SpacerXSmall />
+                    <s.TextDescription style={{ textAlign: "center" }}>
+                      Don't have wallet?&nbsp;
+                      <StyledLink
+                        target={"_blank"}
+                        title={"Download MetaMask wallet"}
+                        href={"https://metamask.io/download.html"}
+                        rel={"noreferrer"}>
+                        Download here!
+                      </StyledLink>
+                    </s.TextDescription>
+                    <s.SpacerXSmall />
+                    <s.TextDescription
+                      style={{ textAlign: "center", fontSize: 17 }}>
+                      Connect to the Polygon (Matic) Mainnet network.
+                    </s.TextDescription>
+                    <s.SpacerSmall />
+                  </>
+                ) : (
+                  <>
+                    {Number(data.totalSupply) <= 10000 ? (
+                      <>
+                        <s.TextTitle
+                          style={{
+                            textAlign: "center",
+                            fontSize: 27,
+                            fontWeight: "bold",
+                          }}>
+                          {data.totalSupply}/10000
+                        </s.TextTitle>
+                        <s.SpacerXSmall />
+                        <s.TextDescription
+                          style={{ textAlign: "center", fontSize: 17 }}>
+                          1 LPR costs 0.3 Matic. Excluding gas fee.
+                        </s.TextDescription>
+                        <s.SpacerSmall />
+                        <StyledButton
+                          disabled={claimingNft ? 1 : 0}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            claimNFTs(1);
+                            getData();
+                          }}>
+                          {claimingNft ? "BUSY MINTING" : "MINTING LOGO"}
+                        </StyledButton>
+                        <s.SpacerXSmall />
+                        <s.TextDescription style={{ textAlign: "center" }}>
+                          {feedback}
+                        </s.TextDescription>
+                        <s.SpacerXSmall />
+                        <s.TextDescription
+                          style={{ textAlign: "center", fontSize: 17 }}>
+                          Lazy minting is available, while supplies last.
+                        </s.TextDescription>
+                        <s.SpacerSmall />
+                      </>
+                    ) : (
+                      <>
+                        <s.TextTitle
+                          style={{
+                            textAlign: "center",
+                            fontSize: 27,
+                            fontWeight: "bold",
+                          }}>
+                          SOLD OUT.
+                        </s.TextTitle>
+                        <s.SpacerXSmall />
+                        <s.TextDescription
+                          style={{ textAlign: "center", fontSize: 17 }}>
+                          The Logo already sold out.
+                        </s.TextDescription>
+                        <s.SpacerSmall />
+                        <StyledButton
+                          onClick={(e) => {
+                            window.open(
+                              "https://opensea.io/collection/logo-pabrik-roti"
+                            );
+                          }}>
+                          GO TO OPENSEA.IO
+                        </StyledButton>
+                        <s.SpacerXSmall />
+                        <s.TextDescription style={{ textAlign: "center" }}>
+                          The largest NFT marketplace.
+                        </s.TextDescription>
+                        <s.SpacerXSmall />
+                        <s.TextDescription
+                          style={{ textAlign: "center", fontSize: 17 }}>
+                          You can still find, and buy Her on OpenSea.IO marketplace.
+                        </s.TextDescription>
+                        <s.SpacerSmall />
+                      </>
+                    )}
+                  </>
+                )}
 
-          <s.TextDescription style={{ textAlign: "center", fontSize: 12 }}>
-          WARNING!!!! On your Metamask wallet, please change the ESTIMATED FEE to LOW, MARKET, or AGGRESSIVE options. Do not forget to do that to mint your NFT successfully!!!! 
-          The gas limit is also already set to 474747 for this contract.
-          But, if you want to change the gas limit, you can set it higher.
-          Once you successfully mint your NFT, you cannot undo this action.
-          </s.TextDescription>
+                <s.TextDescription style={{ textAlign: "center", fontSize: 12 }}>
+                  WARNING!!!! On your Metamask wallet, please change the ESTIMATED
+                  FEE to LOW, MARKET, or AGGRESSIVE options. Do not forget to do
+                  that to mint your NFT successfully!!!! The gas limit is also
+                  already set to 474747 for this contract. But, if you want to
+                  change the gas limit, you can set it higher. Once you successfully
+                  mint your NFT, you cannot undo this action.
+                </s.TextDescription>
+              </>
+            )}
           </s.Container>
         </ResponsiveWrapper>
         <s.SpacerMedium />
-        <s.TextTitle  style={{ textAlign: "center", fontSize: 27 }}>
+        <s.TextTitle style={{ textAlign: "center", fontSize: 27 }}>
           Thanks to:
         </s.TextTitle>
         <s.SpacerXSmall />
-        <s.Container jc={"center"} ai={"center"} fd={"row"} style={{ width: "70%" }}>
+        <s.Container
+          jc={"center"}
+          ai={"center"}
+          fd={"row"}
+          style={{ width: "70%" }}>
           <StyledLink
             target={"_blank"}
-            href={"https://iqraa.straight-line.org/the-kings-nfts/02-the-creations.../waivfves-1/44.-anthropophobia"}
-            rel={"noreferrer"}
-          >
-            <StyledImg 
-              alt={"anthropophobia"} 
-              title={"Anthropophobia Viruses"} 
+            href={
+              "https://docs.endhonesa.com/02-the-creations.../waivfves-1/44.-anthropophobia"
+            }
+            rel={"noreferrer"}>
+            <StyledImg
+              alt={"anthropophobia"}
+              title={"Anthropophobia Viruses"}
               src={g2}
               style={{ width: "47px", height: "47px" }}
             />
@@ -304,11 +374,10 @@ function App() {
           <StyledLink
             target={"_blank"}
             href={"https://hashlips.io/"}
-            rel={"noreferrer"}
-          >
-            <StyledImg 
-              alt={"hashlips"} 
-              title={"HashLips"} 
+            rel={"noreferrer"}>
+            <StyledImg
+              alt={"hashlips"}
+              title={"HashLips"}
               src={g3}
               style={{ width: "47px", height: "47px" }}
             />
@@ -317,14 +386,15 @@ function App() {
         <s.SpacerSmall />
         <s.TextDescription style={{ textAlign: "center", fontSize: 17 }}>
           Kondom Berduri! © 2021 by&nbsp;
-            <StyledLink 
-              title={"Pabrik Roti - The Breads Factory"}
-              target={"_blank"} 
-              href={"https://iqraa.straight-line.org/the-kings-nfts/04-the-12th-stage.../the-breads-factory"} 
-              rel={"noreferrer"}
-            >
-              Pabrik Roti Indonesia
-            </StyledLink>
+          <StyledLink
+            title={"Pabrik Roti - The Breads Factory"}
+            target={"_blank"}
+            href={
+              "https://docs.endhonesa.com/04-the-12th-stage.../breads-factory"
+            }
+            rel={"noreferrer"}>
+            Pabrik Roti Indonesia
+          </StyledLink>
         </s.TextDescription>
         <s.SpacerLarge />
       </s.Container>

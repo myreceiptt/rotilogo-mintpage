@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7cb972b1.chunk.css",
+    "main.js": "/static/js/main.bef2e05c.chunk.js",
+    "main.js.map": "/static/js/main.bef2e05c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d2e3a070.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d2e3a070.js.map",
+    "static/js/2.cdfcb021.chunk.js": "/static/js/2.cdfcb021.chunk.js",
+    "static/js/2.cdfcb021.chunk.js.map": "/static/js/2.cdfcb021.chunk.js.map",
+    "static/js/3.38cbd187.chunk.js": "/static/js/3.38cbd187.chunk.js",
+    "static/js/3.38cbd187.chunk.js.map": "/static/js/3.38cbd187.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7cb972b1.chunk.css.map": "/static/css/main.7cb972b1.chunk.css.map",
+    "static/js/2.cdfcb021.chunk.js.LICENSE.txt": "/static/js/2.cdfcb021.chunk.js.LICENSE.txt",
+    "static/media/reset.css": "/static/media/Futura-Heavy-Font.d9d3f2df.woff",
+    "static/media/anthropophobia.745ece6b.png": "/static/media/anthropophobia.745ece6b.png",
+    "static/media/hashlips.2bcba7f2.png": "/static/media/hashlips.2bcba7f2.png",
+    "static/media/rotilogo.a9bc56c4.gif": "/static/media/rotilogo.a9bc56c4.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2e3a070.js",
+    "static/js/2.cdfcb021.chunk.js",
+    "static/css/main.7cb972b1.chunk.css",
+    "static/js/main.bef2e05c.chunk.js"
+  ]
+}
