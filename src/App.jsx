@@ -9,7 +9,7 @@ import g2 from "./assets/images/anthropophobia.png";
 import g3 from "./assets/images/hashlips.png";
 // import g4 from "./assets/images/...";
 
-const ARTEFACT_MODE = process.env.REACT_APP_ARTEFACT_MODE === "true";
+const ARTEFACT_MODE = import.meta.env.VITE_ARTEFACT_MODE === "true";
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
