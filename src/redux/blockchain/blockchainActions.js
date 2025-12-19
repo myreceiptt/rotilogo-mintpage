@@ -1,6 +1,4 @@
 // constants
-import Web3EthContract from "web3-eth-contract";
-// import Web3 from "web3";
 import SmartContract from "../../contracts/TheBreadsFactory_Logo10k.json";
 // log
 import { fetchData } from "../data/dataActions";
@@ -9,7 +7,7 @@ let Web3Lib = null;
 const getWeb3 = async () => {
   if (!Web3Lib) {
     const mod = await import("web3");
-    Web3Lib = mod.default ?? mod;
+    Web3Lib = mod.Web3 ?? mod.default ?? mod;
   }
   return Web3Lib;
 };
@@ -49,20 +47,20 @@ export const connect = () => {
 
     if (metamaskIsInstalled) {
       const Web3 = await getWeb3();
-      Web3EthContract.setProvider(ethereum);
       const web3 = new Web3(ethereum);
 
       try {
         const accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
-        const networkId = await ethereum.request({
-          method: "net_version",
+        const chainId = await ethereum.request({
+          method: "eth_chainId",
         });
+        const chainIdDecimal = parseInt(chainId, 16).toString();
         // const NetworkData = await SmartContract.networks[networkId];
-        if (networkId === "137") {
-          const SmartContractObj = new Web3EthContract(
-            SmartContract,
+        if (chainIdDecimal === "137") {
+          const SmartContractObj = new web3.eth.Contract(
+            SmartContract.abi,
             "0x6710E0f18270bE32F9590503E306997B3162B83e"
           );
           dispatch(
