@@ -18,9 +18,9 @@ production-safe on Vercel.
 
 ### Build System
 
-- CRA toolchain via **CRACO** (Webpack 5)
-- Node core polyfills are enabled to keep legacy Web3 dependencies compatible
-  with modern Webpack builds.
+- Vite toolchain (React)
+- Output directory: **dist/**
+- Env var: `VITE_ARTEFACT_MODE=true`
 
 ### Monthly Safe Updates (recommended)
 
@@ -48,6 +48,7 @@ Examples:
 - Web3 stack upgrade (e.g., web3 v1 → v4)
 - Toolchain changes (CRACO/CRA migration)
 - Node major policy change
+- Pinned dependency note: `react-signature-canvas` is held at 1.0.7 (latest is alpha).
 
 ### Artefact UX Policy (Frozen)
 
