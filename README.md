@@ -13,7 +13,7 @@ production-safe on Vercel.
 ### Runtime
 
 - Node: **24.x** (local + Vercel)
-- Package manager: **Yarn** (lockfile: `yarn.lock`)
+- Package manager: **Yarn** (lockfile: `yarn.lock`, repo-pinned to `yarn@4.12.0`)
 - Deploy target: **Vercel**
 
 ### Build System
