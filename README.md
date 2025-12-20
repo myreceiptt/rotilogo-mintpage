@@ -27,9 +27,9 @@ production-safe on Vercel.
 Monthly is **monitor + verify**, not modernization.
 
 1. Check what’s outdated (report only):
-   - `yarn outdated`
+   - `yarn up -i` (interactive list; select patch/minor only)
 2. Security report (report only unless explicitly approved):
-   - `yarn audit --level moderate`
+   - `yarn npm audit --severity moderate`
 3. Verify build reproducibility:
    - `yarn build` (or `yarn build:artefact` if kept)
 4. Verify production sanity:
@@ -49,6 +49,7 @@ Examples:
 - Toolchain changes (CRACO/CRA migration)
 - Node major policy change
 - Pinned dependency note: `react-signature-canvas` is held at 1.0.7 (latest is alpha).
+- Package manager major version: `yarn set version stable` and commit `.yarnrc.yml`, `.yarn/releases/*`, and `packageManager` in `package.json`.
 
 ### Artefact UX Policy (Frozen)
 
