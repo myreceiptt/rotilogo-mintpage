@@ -45,3 +45,5 @@ __MACOSX/
 # build output
 build/
 dist/
+
+.yarn/install-state.gz
