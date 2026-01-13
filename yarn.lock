@@ -679,10 +679,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openzeppelin/contracts@npm:^5.4.0":
-  version: 5.5.0
-  resolution: "@openzeppelin/contracts@npm:5.5.0"
-  checksum: 10c0/884ab2850ff380c11d042ce50ebecf8fad2f784105554d8826a4160126d17e96b8a636400e5640ac227d7e8f8754477835ead8acb2668355b83e2509ca7fca63
+"@openzeppelin/contracts@npm:5.4.0":
+  version: 5.4.0
+  resolution: "@openzeppelin/contracts@npm:5.4.0"
+  checksum: 10c0/7e05646dee4905fea4493f0fb2ad208abaff84b9f5ef1b9e1a5fc61d0e74d9bc30759bdf0d09a08049cfef6a290623330d83469eadc990a7bba6c2cd09a27e1d
   languageName: node
   linkType: hard
 
@@ -4610,9 +4610,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.3.5":
-  version: 6.3.5
-  resolution: "styled-components@npm:6.3.5"
+"styled-components@npm:^6.3.6":
+  version: 6.3.6
+  resolution: "styled-components@npm:6.3.6"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     "@emotion/unitless": "npm:0.10.0"
@@ -4626,7 +4626,7 @@ __metadata:
   peerDependencies:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
-  checksum: 10c0/0c8c547259f96b321fc90e81e9710a8b89ad78d8d792ed479f843b0f084fd72f2bd3ce468f44f57bb5840f8d66113b0ff9b951488481066275f6f24fe7d10a83
+  checksum: 10c0/5ff6a25677636e60f76d0789760b6beed87d44d7c46b7a0dab5bab045faba79d9327a205eb62c4fa9e04b4d5d099b615cb51c1566803c618dea66b5e5080bfb9
   languageName: node
   linkType: hard
 
@@ -4670,7 +4670,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "thebreadsfactory_logo10k_dapp@workspace:."
   dependencies:
-    "@openzeppelin/contracts": "npm:^5.4.0"
+    "@openzeppelin/contracts": "npm:5.4.0"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^16.3.1"
@@ -4698,7 +4698,7 @@ __metadata:
     redux-thunk: "npm:^3.1.0"
     stream-browserify: "npm:^3.0.0"
     stream-http: "npm:^3.2.0"
-    styled-components: "npm:^6.3.5"
+    styled-components: "npm:^6.3.6"
     url: "npm:^0.11.4"
     vite: "npm:^7.3.1"
     web-vitals: "npm:^5.1.0"
