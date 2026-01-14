@@ -282,7 +282,7 @@ function App() {
         <s.Container jc={"center"} ai={"center"} fd={"row"} style={{ width: "70%" }}>
         <StyledLink
           target={"_blank"}
-          href={"https://b2c1.straight-line.org/"}
+          href={"https://b2c1.endhonesa.com/"}
           rel={"noreferrer"}
         >
           <StyledImg 

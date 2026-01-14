@@ -73,7 +73,7 @@ Examples:
 
 > Shush, I'm playing, learning, and working. 🤫 🤫 🤫 🤫
 
-- 😄 &nbsp; I'm [Prof. NOTA](https://deeplinks.straight-line.org/), per/pers.
+- 😄 &nbsp; I'm [Prof. NOTA](https://deeplink.endhonesa.com/), per/pers.
 - 🤙 &nbsp; I’m currently playing.
 - 🌱 &nbsp; I’m currently learning.
 - 🔭 &nbsp; I’m currently working.
@@ -81,7 +81,7 @@ Examples:
 - 🤔 &nbsp; I’m not looking for help.
 - 💬 &nbsp; Don't ask me about that.
 - 📫 &nbsp; Don't try to reach me.
-- ⚡ &nbsp; Fun fact: [The King's NFTs project](https://iqraa.straight-line.org/the-kings-nfts/)
+- ⚡ &nbsp; Fun fact: [The King's NFTs project](https://docs.endhonesa.com/)
 
 > Here are some ideas to get you started:
 
@@ -89,9 +89,9 @@ Logo Pabrik Roti is the Logo of The Breads Factory, an NFT project by PabrikRoti
 
 > Regards
 >
-> [Prof. NOTA](https://deeplinks.straight-line.org/)
+> [Prof. NOTA](https://deeplink.endhonesa.com/)
 >
-> [init.straight-line.org](https://init.straight-line.org/)
+> [init.endhonesa.com](https://init.endhonesa.com/)
 
 <!--
 **myreceiptt/myreceiptt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on Prof. NOTA's GitHub profile.
